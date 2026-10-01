@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LKPD Informatika — Algoritma & Struktur Data</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">
+      <div class="brand-icon">⌘</div>
+      <div>
+        <strong>LKPD Informatika</strong>
+        <span>Algoritma & Struktur Data</span>
+      </div>
+    </div>
+    <div class="top-actions">
+      <button id="saveBtn" class="btn ghost">💾 Simpan</button>
+      <button id="pdfBtn" class="btn primary">⬇️ Download PDF</button>
+    </div>
+  </header>
+
+  <div class="progress-wrap">
+    <div class="progress-meta">
+      <span id="progressText">0% selesai</span>
+      <span id="progressCount">0 / 0 pertanyaan</span>
+    </div>
+    <div class="progress"><div id="progressBar"></div></div>
+  </div>
+
+  <main id="worksheet" class="container">
+    <section class="hero card">
+      <div class="eyebrow">LEMBAR KERJA PESERTA DIDIK</div>
+      <h1>Algoritma dan Struktur Data</h1>
+      <p class="subtitle">Search Algorithm • Sort Algorithm • Stack • Queue</p>
+      <div class="hero-grid">
+        <div><span>Mata Pelajaran</span><b>Informatika</b></div>
+        <div><span>Fase / Kelas</span><b>E / X</b></div>
+        <div><span>Konteks</span><b>Teknik Pemesinan</b></div>
+        <div><span>Alokasi</span><b>3 JP (135 menit)</b></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>1. Identitas Peserta Didik</h2>
+      <div class="grid two">
+        <label>Nama Kelompok<input data-save id="groupName" placeholder="Nama kelompok"></label>
+        <label>Kelas<input data-save id="className" placeholder="Contoh: X TP 1"></label>
+      </div>
+      <div class="member-table">
+        <div class="table-head"><span>No.</span><span>Nama</span><span>Peran</span></div>
+        <div class="member-row"><span>1</span><input data-save placeholder="Nama anggota"><select data-save><option>Ketua</option><option>Penulis</option><option>Pengelola data</option><option>Pengamat</option><option>Penyaji</option></select></div>
+        <div class="member-row"><span>2</span><input data-save placeholder="Nama anggota"><select data-save><option>Penulis</option><option>Ketua</option><option>Pengelola data</option><option>Pengamat</option><option>Penyaji</option></select></div>
+        <div class="member-row"><span>3</span><input data-save placeholder="Nama anggota"><select data-save><option>Pengelola data</option><option>Ketua</option><option>Penulis</option><option>Pengamat</option><option>Penyaji</option></select></div>
+        <div class="member-row"><span>4</span><input data-save placeholder="Nama anggota"><select data-save><option>Pengamat</option><option>Ketua</option><option>Penulis</option><option>Pengelola data</option><option>Penyaji</option></select></div>
+        <div class="member-row"><span>5</span><input data-save placeholder="Nama anggota"><select data-save><option>Penyaji</option><option>Ketua</option><option>Penulis</option><option>Pengelola data</option><option>Pengamat</option></select></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>2. Tujuan Pembelajaran</h2>
+      <ol>
+        <li>Menjelaskan fungsi Search Algorithm dalam menemukan data.</li>
+        <li>Menerapkan Linear Search dan menganalisis kondisi Binary Search.</li>
+        <li>Menerapkan dan membandingkan Bubble Sort dan Selection Sort.</li>
+        <li>Menerapkan prinsip LIFO pada Stack dan FIFO pada Queue.</li>
+        <li>Menentukan operasi Push, Pop, Enqueue, dan Dequeue.</li>
+        <li>Menganalisis penerapan algoritma dan struktur data pada kehidupan sehari-hari dan lingkungan kerja.</li>
+      </ol>
+    </section>
+
+    <section class="card">
+      <h2>3. Informasi Penting</h2>
+      <div class="concept-grid">
+        <div class="concept"><b>🔎 Search</b><p>Bagaimana cara menemukan data yang dicari?</p></div>
+        <div class="concept"><b>↕️ Sort</b><p>Bagaimana cara mengatur data agar terurut?</p></div>
+        <div class="concept"><b>📚 Stack</b><p>LIFO — Last In, First Out.</p></div>
+        <div class="concept"><b>🚶 Queue</b><p>FIFO — First In, First Out.</p></div>
+      </div>
+      <div class="tip"><b>Ingat:</b> Linear Search = cek satu per satu. Binary Search = bagi area pencarian menjadi dua secara berulang dan membutuhkan data terurut. Bubble Sort = bandingkan data berdekatan. Selection Sort = cari data terkecil/terbesar dari bagian yang belum terurut.</div>
+    </section>
+
+    <section class="card problem">
+      <div class="eyebrow">PROBLEM BASED LEARNING</div>
+      <h2>4. Permasalahan Utama — “Satu Hari di Bengkel”</h2>
+      <p>Bayangkan kalian menjadi bagian dari tim teknisi sebuah bengkel pemesinan. Pada awal jam kerja ditemukan empat masalah:</p>
+      <ol>
+        <li>Teknisi kesulitan menemukan komponen tertentu.</li>
+        <li>Ukuran komponen di gudang tidak tersusun dengan baik.</li>
+        <li>Benda kerja ditumpuk sehingga benda terakhir diletakkan harus diambil terlebih dahulu.</li>
+        <li>Siswa menunggu giliran menggunakan mesin dan harus dilayani berdasarkan urutan kedatangan.</li>
+      </ol>
+      <blockquote>“Gunakan cara berpikir komputasional untuk membuat pengelolaan data, komponen, dan antrean di bengkel menjadi lebih teratur.”</blockquote>
+    </section>
+
+    <section class="card section-card">
+      <div class="section-number">AKTIVITAS 1</div>
+      <h2>Investigasi Search Algorithm</h2>
+      <p class="time">⏱ ±30 menit</p>
+
+      <h3>Kasus 1 — Mencari Nomor Komponen</h3>
+      <p>Gudang memiliki daftar: <strong>27 – 8 – 15 – 3 – 21 – 12 – 6 – 18 – 30 – 10 – 24 – 5</strong>. Teknisi meminta komponen nomor <strong>18</strong>.</p>
+
+      <h3>Tahap 1 — Linear Search</h3>
+      <p>Periksa data satu per satu mulai dari data pertama.</p>
+      <table class="input-table">
+        <thead><tr><th>Langkah</th><th>Data</th><th>Hasil pemeriksaan</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>27</td><td><input data-save placeholder="Belum / cocok"></td></tr>
+          <tr><td>2</td><td>8</td><td><input data-save></td></tr>
+          <tr><td>3</td><td>15</td><td><input data-save></td></tr>
+          <tr><td>4</td><td>3</td><td><input data-save></td></tr>
+          <tr><td>5</td><td>21</td><td><input data-save></td></tr>
+          <tr><td>6</td><td>12</td><td><input data-save></td></tr>
+          <tr><td>7</td><td>6</td><td><input data-save></td></tr>
+          <tr><td>8</td><td>18</td><td><input data-save></td></tr>
+        </tbody>
+      </table>
+      <div class="questions">
+        <label>1. Berapa kali pemeriksaan dilakukan sampai data ditemukan?<input data-save type="number"></label>
+        <label>2. Jika data 18 berada di posisi pertama, berapa pemeriksaan yang diperlukan?<input data-save type="number"></label>
+        <label>3. Jika data 18 tidak terdapat dalam kumpulan data, apa yang terjadi?<textarea data-save></textarea></label>
+        <label>4. Apakah data awal harus terurut? Jelaskan.<textarea data-save></textarea></label>
+      </div>
+
+      <h3>Tahap 2 — Mengubah Data untuk Binary Search</h3>
+      <p>Susun data awal menjadi urutan naik.</p>
+      <label>Hasil pengurutan<textarea data-save placeholder="Tuliskan urutan dari kecil ke besar"></textarea></label>
+
+      <h3>Tahap 3 — Binary Search</h3>
+      <p>Target: <strong>18</strong>. Tentukan data tengah, bandingkan, abaikan bagian yang tidak mungkin, lalu ulangi.</p>
+      <table class="input-table">
+        <thead><tr><th>Langkah</th><th>Rentang data</th><th>Data tengah</th><th>Perbandingan</th><th>Bagian dipertahankan</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><input data-save></td><td><input data-save></td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>2</td><td><input data-save></td><td><input data-save></td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>3</td><td><input data-save></td><td><input data-save></td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>4</td><td><input data-save></td><td><input data-save></td><td><input data-save></td><td><input data-save></td></tr>
+        </tbody>
+      </table>
+      <div class="questions">
+        <label>5. Berapa kali perbandingan dilakukan sampai 18 ditemukan?<input data-save type="number"></label>
+        <label>6. Bandingkan jumlah pemeriksaan Linear Search dan Binary Search.<textarea data-save></textarea></label>
+        <label>7. Mengapa Binary Search tidak dapat langsung digunakan pada data awal?<textarea data-save></textarea></label>
+        <label>8. Apakah Binary Search selalu lebih tepat digunakan daripada Linear Search? Jelaskan berdasarkan kondisi data.<textarea data-save></textarea></label>
+      </div>
+
+      <h3>Tahap 4 — Tantangan Search</h3>
+      <table class="input-table">
+        <thead><tr><th>Kondisi</th><th>Metode</th><th>Alasan</th></tr></thead>
+        <tbody>
+          <tr><td>A: 8 data, tidak terurut</td><td><select data-save><option value="">Pilih</option><option>Linear Search</option><option>Binary Search</option></select></td><td><input data-save></td></tr>
+          <tr><td>B: 1.000 data, sudah terurut</td><td><select data-save><option value="">Pilih</option><option>Linear Search</option><option>Binary Search</option></select></td><td><input data-save></td></tr>
+          <tr><td>C: 1.000 data, tidak terurut</td><td><select data-save><option value="">Pilih</option><option>Linear Search</option><option>Binary Search</option></select></td><td><input data-save></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card section-card">
+      <div class="section-number">AKTIVITAS 2</div>
+      <h2>Investigasi Sort Algorithm</h2>
+      <p class="time">⏱ ±30 menit</p>
+
+      <h3>Kasus 2 — Menata Mata Bor</h3>
+      <p>Ukuran mata bor: <strong>16 – 8 – 20 – 6 – 14 – 10 – 4 – 18 – 12</strong>. Susun dari terkecil sampai terbesar.</p>
+
+      <h3>Tahap 1 — Coba Tanpa Algoritma</h3>
+      <label>Bagaimana strategi kelompok kalian saat mengurutkan data?<textarea data-save></textarea></label>
+      <label>Data mana yang pertama kali kalian perhatikan?<input data-save></label>
+      <label>Data akhir hasil pengurutan<textarea data-save></textarea></label>
+
+      <h3>Tahap 2 — Bubble Sort</h3>
+      <p>Bandingkan dua data bersebelahan. Jika urutannya salah, tukarkan.</p>
+      <label>Pass 1 — perubahan penting<textarea data-save rows="4"></textarea></label>
+      <label>Hasil Pass 1<input data-save></label>
+      <label>Hasil Pass 2<input data-save></label>
+      <label>Hasil Pass 3<input data-save></label>
+      <label>Hasil Pass 4<input data-save></label>
+      <label>Hasil akhir<textarea data-save></textarea></label>
+
+      <h3>Tahap 3 — Selection Sort</h3>
+      <p>Cari nilai terkecil dari bagian yang belum terurut, lalu tempatkan di posisi berikutnya.</p>
+      <table class="input-table">
+        <thead><tr><th>Tahap</th><th>Nilai terkecil</th><th>Hasil sementara</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>2</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>3</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>4</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>5</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>6</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>7</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>8</td><td><input data-save></td><td><input data-save></td></tr>
+        </tbody>
+      </table>
+
+      <h3>Tahap 4 — Membandingkan Strategi</h3>
+      <table class="input-table">
+        <thead><tr><th>Pertanyaan</th><th>Bubble Sort</th><th>Selection Sort</th></tr></thead>
+        <tbody>
+          <tr><td>Apa yang diperiksa?</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>Bagaimana menentukan data yang dipindahkan?</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>Kapan terjadi pertukaran?</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>Fokus setiap tahap?</td><td><input data-save></td><td><input data-save></td></tr>
+        </tbody>
+      </table>
+      <div class="questions">
+        <label>3. Algoritma mana yang lebih mudah dijelaskan kepada pemula? Mengapa?<textarea data-save></textarea></label>
+        <label>4. Apakah hasil akhir kedua algoritma berbeda?<textarea data-save></textarea></label>
+        <label>5. Mengapa algoritma berbeda dapat menghasilkan urutan akhir yang sama?<textarea data-save></textarea></label>
+      </div>
+
+      <h3>Tahap 5 — Tantangan Sorting</h3>
+      <p>Data: <strong>25 – 7 – 18 – 3 – 20 – 11</strong></p>
+      <label>A. Bubble Sort: pasangan yang dibandingkan terlebih dahulu?<input data-save></label>
+      <label>B. Selection Sort: data yang pertama kali dicari?<input data-save></label>
+      <label>C. Jika urutan diminta terbesar ke terkecil, apakah prinsip algoritmanya berubah? Jelaskan.<textarea data-save></textarea></label>
+    </section>
+
+    <section class="card section-card">
+      <div class="section-number">AKTIVITAS 3</div>
+      <h2>Investigasi Stack</h2>
+      <p class="time">⏱ ±20 menit</p>
+      <p>Gunakan kartu A, B, C, D, E, F atau benda yang disediakan guru. Lakukan:</p>
+      <div class="codebox">Push A → Push B → Push C → Push D → Pop → Push E → Push F → Pop → Pop</div>
+      <table class="input-table">
+        <thead><tr><th>No.</th><th>Operasi</th><th>Data keluar</th><th>Kondisi Stack</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Push A</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>2</td><td>Push B</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>3</td><td>Push C</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>4</td><td>Push D</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>5</td><td>Pop</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>6</td><td>Push E</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>7</td><td>Push F</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>8</td><td>Pop</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>9</td><td>Pop</td><td><input data-save></td><td><input data-save></td></tr>
+        </tbody>
+      </table>
+      <div class="questions">
+        <label>1. Data apa yang pertama kali keluar?<input data-save></label>
+        <label>2. Data apa yang terakhir keluar?<input data-save></label>
+        <label>3. Apakah data pertama masuk menjadi data pertama keluar?<textarea data-save></textarea></label>
+        <label>4. Jelaskan hubungan Stack dengan LIFO.<textarea data-save></textarea></label>
+      </div>
+      <h3>Tantangan Stack</h3>
+      <div class="codebox">Push 10 → Push 20 → Push 30 → Pop → Push 40 → Push 50 → Pop → Pop</div>
+      <label>A. Data keluar secara berurutan<input data-save></label>
+      <label>B. Data yang tersisa<textarea data-save></textarea></label>
+      <label>C. Jika satu Pop tambahan dilakukan, data apa yang keluar?<input data-save></label>
+    </section>
+
+    <section class="card section-card">
+      <div class="section-number">AKTIVITAS 4</div>
+      <h2>Investigasi Queue</h2>
+      <p class="time">⏱ ±20 menit</p>
+      <p>Empat siswa menunggu giliran menggunakan mesin: <strong>Andi → Budi → Citra → Deni</strong>. Kemudian Eko datang.</p>
+      <div class="codebox">Enqueue Andi → Enqueue Budi → Enqueue Citra → Enqueue Deni → Dequeue → Enqueue Eko → Dequeue → Enqueue Fajar → Dequeue</div>
+      <table class="input-table">
+        <thead><tr><th>No.</th><th>Operasi</th><th>Data keluar</th><th>Kondisi Queue</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>Enqueue Andi</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>2</td><td>Enqueue Budi</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>3</td><td>Enqueue Citra</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>4</td><td>Enqueue Deni</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>5</td><td>Dequeue</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>6</td><td>Enqueue Eko</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>7</td><td>Dequeue</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>8</td><td>Enqueue Fajar</td><td>-</td><td><input data-save></td></tr>
+          <tr><td>9</td><td>Dequeue</td><td><input data-save></td><td><input data-save></td></tr>
+        </tbody>
+      </table>
+      <div class="questions">
+        <label>1. Siapa yang keluar terlebih dahulu?<input data-save></label>
+        <label>2. Mengapa Eko tidak langsung dilayani ketika datang?<textarea data-save></textarea></label>
+        <label>3. Jelaskan hubungan Queue dengan FIFO.<textarea data-save></textarea></label>
+        <label>4. Mengapa Queue sesuai untuk mengatur giliran penggunaan mesin?<textarea data-save></textarea></label>
+      </div>
+    </section>
+
+    <section class="card section-card">
+      <div class="section-number">AKTIVITAS 5</div>
+      <h2>Mission Challenge — Satu Sistem, Empat Konsep</h2>
+      <p class="time">⏱ ±10 menit</p>
+      <div class="case-grid">
+        <div class="case"><b>Kasus A</b><p>Menemukan nomor komponen dari daftar yang belum terurut.</p><label>Konsep<input data-save></label><label>Alasan<textarea data-save></textarea></label></div>
+        <div class="case"><b>Kasus B</b><p>Mengatur ukuran komponen dari terkecil ke terbesar.</p><label>Konsep<input data-save></label><label>Alasan<textarea data-save></textarea></label></div>
+        <div class="case"><b>Kasus C</b><p>Benda kerja terakhir ditumpuk harus diambil terlebih dahulu.</p><label>Konsep<input data-save></label><label>Prinsip<input data-save></label></div>
+        <div class="case"><b>Kasus D</b><p>Siswa yang datang pertama harus menggunakan mesin terlebih dahulu.</p><label>Konsep<input data-save></label><label>Prinsip<input data-save></label></div>
+      </div>
+    </section>
+
+    <section class="card section-card">
+      <div class="section-number">AKTIVITAS 6</div>
+      <h2>Case Analysis — Pilih Strategimu</h2>
+      <p>Sebuah toko memiliki 5.000 data produk. Data produk sudah diurutkan berdasarkan nomor produk. Pegawai ingin mencari produk nomor 3.725.</p>
+      <div class="questions">
+        <label>1. Search Algorithm apa yang dapat digunakan?<input data-save></label>
+        <label>2. Mengapa metode tersebut sesuai?<textarea data-save></textarea></label>
+        <label>3. Apakah Linear Search tetap dapat digunakan?<textarea data-save></textarea></label>
+        <label>4. Apa syarat penting agar strategi pilihan kalian bekerja sesuai konsepnya?<textarea data-save></textarea></label>
+      </div>
+    </section>
+
+    <section class="card section-card">
+      <div class="section-number">AKTIVITAS 7</div>
+      <h2>Transfer ke Kehidupan Sehari-hari</h2>
+      <table class="input-table">
+        <thead><tr><th>Konsep</th><th>Contoh dalam kehidupan</th><th>Mengapa termasuk konsep tersebut?</th></tr></thead>
+        <tbody>
+          <tr><td>Linear Search</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>Binary Search</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>Sorting</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>Stack</td><td><input data-save></td><td><input data-save></td></tr>
+          <tr><td>Queue</td><td><input data-save></td><td><input data-save></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="card section-card">
+      <div class="section-number">AKTIVITAS 8</div>
+      <h2>Refleksi Berpikir Komputasional</h2>
+      <div class="questions">
+        <label>1. Sebelum mengerjakan LKPD ini, saya mengira bahwa mencari data adalah...<textarea data-save></textarea></label>
+        <label>2. Setelah melakukan simulasi, saya memahami bahwa algoritma pencarian...<textarea data-save></textarea></label>
+        <label>3. Bagian yang paling membuat saya berpikir adalah...<textarea data-save></textarea></label>
+        <label>4. Kesalahan yang sempat dilakukan kelompok saya adalah...<textarea data-save></textarea></label>
+        <label>5. Cara kelompok saya memperbaiki kesalahan tersebut adalah...<textarea data-save></textarea></label>
+        <label>6. Jika saya menemukan masalah serupa di kehidupan sehari-hari, saya akan...<textarea data-save></textarea></label>
+      </div>
+    </section>
+
+    <section class="card section-card">
+      <div class="section-number">KESIMPULAN</div>
+      <h2>Kesimpulan Akhir</h2>
+      <div class="diagram">
+        <div>DATA</div><span>↓</span>
+        <div class="diagram-row">
+          <div>SEARCH<br><small>Linear / Binary</small></div>
+          <div>SORT<br><small>Bubble / Selection</small></div>
+          <div>STRUKTUR DATA<br><small>Stack / Queue</small></div>
+        </div>
+      </div>
+      <div class="questions">
+        <label>Lengkapi kesimpulan tentang Search, Sort, Stack, dan Queue.<textarea data-save rows="5"></textarea></label>
+        <label>Jawaban 3–5 kalimat untuk adik kelas: “Apa gunanya belajar Search, Sort, Stack, dan Queue?”<textarea data-save rows="6"></textarea></label>
+      </div>
+    </section>
+
+    <section class="card section-card">
+      <div class="section-number">PRESENTASI</div>
+      <h2>Hasil Presentasi Kelompok</h2>
+      <div class="questions">
+        <label>Kasus yang dipilih<input data-save></label>
+        <label>Konsep yang digunakan<input data-save></label>
+        <label>Alasan<textarea data-save></textarea></label>
+        <label>Kesimpulan<textarea data-save></textarea></label>
+      </div>
+    </section>
+
+    <section class="card final-card">
+      <h2>✅ Pemeriksaan Sebelum Mengumpulkan</h2>
+      <label class="check"><input type="checkbox" data-save> Identitas kelompok sudah diisi.</label>
+      <label class="check"><input type="checkbox" data-save> Semua aktivitas sudah dikerjakan.</label>
+      <label class="check"><input type="checkbox" data-save> Jawaban sudah diperiksa bersama.</label>
+      <label class="check"><input type="checkbox" data-save> File PDF siap dikumpulkan.</label>
+      <div class="submit-note">
+        <b>Langkah terakhir:</b> tekan <strong>Download PDF</strong>, simpan file dengan nama yang disepakati guru, lalu unggah ke folder Google Drive kelas.
+      </div>
+    </section>
+  </main>
+
+  <div id="toast" class="toast"></div>
+
+  <footer class="footer">
+    <span>LKPD Informatika • SMK • Algoritma & Struktur Data</span>
+    <span>Data tersimpan di perangkat ini melalui browser.</span>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
